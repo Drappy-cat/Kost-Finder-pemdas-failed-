@@ -26,3 +26,6 @@ Aplikasi berbasis Java untuk mengelola dan menampilkan data Pencarian Kost di se
    java -cp bin App.Main
 
 By : Kelompok 1
+
+
+namun masih ada kesalahan yang perlu di perbaiki, yaitu database dan juga koneksi antar html 
