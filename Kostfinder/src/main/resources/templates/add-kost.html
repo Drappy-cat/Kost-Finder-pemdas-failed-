@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Kost</title>
+    <link rel="stylesheet" href="/css/add-kost_style.css">
+</head>
+<body>
+    <header>
+        <h1>Tambah Kost Baru</h1>
+    </header>
+    <main>
+        <!-- Pesan Status -->
+        <div id="statusMessage">
+            <!-- Placeholder untuk pesan sukses/gagal -->
+            <span th:if="${errorMessage}" th:text="${errorMessage}" class="error"></span>
+            <span th:if="${successMessage}" th:text="${successMessage}" class="success"></span>
+        </div>
+
+        <!-- Form untuk menambah kost -->
+        <form method="POST" action="/add-kost" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Nama Kost</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Deskripsi</label>
+                <textarea name="description" id="description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="facilities">Fasilitas</label>
+                <input type="text" name="facilities" id="facilities" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Harga per Bulan (Rp)</label>
+                <input type="number" name="price" id="price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="owner_contact">Nomor Kontak Pemilik</label>
+                <input type="text" name="owner_contact" id="owner_contact" required>
+            </div>
+
+            <div class="form-group">
+                <label for="images">Foto Kost</label>
+                <input type="file" name="images" id="images" accept="image/*" multiple required>
+                <small>* Anda dapat mengunggah lebih dari satu file</small>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Tambah Kost</button>
+            </div>
+        </form>
+
+        <!-- Tombol untuk melihat daftar kost -->
+        <div class="form-group">
+            <a href="/kost/list">
+                <button type="button">Lihat Keseluruhan Kost</button>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

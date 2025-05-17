@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kost</title>
+    <link rel="stylesheet" href="/css/kost-detail.css">
+</head>
+<body>
+    <header>
+        <h1>Detail Kost</h1>
+        <nav>
+            <a href="/kost/list">Kembali ke Daftar Kost</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="kost-detail">
+            <!-- Gambar Kost -->
+            <div class="kost-image-container">
+                <!-- Looping untuk menampilkan semua gambar -->
+                <div th:each="image : ${kost.images}">
+                    <img th:src="@{${image}}" th:alt="${kost.name}" class="kost-image">
+                </div>
+            </div>
+
+            <!-- Informasi Kost -->
+            <div class="kost-info">
+                <h2 th:text="${kost.name}">Nama Kost</h2>
+                <p><strong>Deskripsi:</strong> <span th:text="${kost.description}">Deskripsi Kost</span></p>
+                <p><strong>Fasilitas:</strong> <span th:text="${kost.facilities}">Fasilitas Kost</span></p>
+                <p><strong>Harga:</strong> Rp <span th:text="${#numbers.formatDecimal(kost.price, 0, 'COMMA', '.')}">0</span></p>
+                <p><strong>Kontak Pemilik:</strong> <span th:text="${kost.ownerContact}">Nomor Kontak</span></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

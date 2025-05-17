@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Kost</title>
+    <link rel="stylesheet" href="/css/kost-list.css"> <!-- Link ke file CSS -->
+</head>
+<body>
+    <header>
+        <h1>Daftar Kost</h1>
+    </header>
+
+    <main>
+        <div class="kost-list">
+            <!-- Perulangan kost menggunakan Thymeleaf -->
+            <div th:if="${kostList != null and #lists.isNotEmpty(kostList)}">
+                <!-- Menampilkan kost jika ada dalam list -->
+                <div th:each="kost : ${kostList}" class="kost-item">
+                    <!-- Gambar kost -->
+                    <div class="kost-image">
+                        <!-- Mengambil gambar pertama dari imagePaths -->
+                        <img th:src="@{${kost.imagePaths[0]}}" alt="Gambar Kost" width="150" />
+                    </div>
+
+                    <!-- Nama kost dan informasi lainnya -->
+                    <div class="kost-info">
+                        <h2 th:text="${kost.name}"></h2>
+                        <p><strong>Harga:</strong> <span th:text="${kost.price}"></span></p>
+                        <p><strong>Kontak Pemilik:</strong> <span th:text="${kost.ownerContact}"></span></p>
+                        <!-- Link untuk melihat detail kost -->
+                        <a th:href="@{/kost/detail/{id}(id=${kost.id})}">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Menampilkan pesan jika tidak ada kost -->
+            <div th:if="${#lists.isEmpty(kostList)}">
+                <p>Tidak ada kost yang tersedia.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

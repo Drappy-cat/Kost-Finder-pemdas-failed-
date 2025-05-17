@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Kost</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Daftar Kost</h1>
+    </header>
+    <main>
+        <div class="kost-list">
+            <% for (Kost kost : kostDAO.getAllKosts()) { %>
+                <div class="kost-item">
+                    <h2><%= kost.getName() %></h2>
+                    <p><strong>Harga:</strong> Rp <%= String.format("%,d", kost.getPrice()) %></p>
+                    <a href="detail-kost?id=<%= kost.getId() %>">Lihat Detail</a>
+                </div>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Kost</title>
+    <link rel="stylesheet" href="../static/css/style_search.css">
+</head>
+<body>
+    <header>
+        <h1>Cari Kost</h1>
+    </header>
+    <main>
+        <form id="searchForm">
+            <input type="text" id="query" placeholder="Masukkan nama kost atau lokasi" required>
+            <button type="submit">Cari</button>
+        </form>
+        <div id="results"></div>
+    </main>
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const query = document.getElementById("query").value;
+
+            fetch(`/search?query=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById("results");
+                    resultsDiv.innerHTML = "";
+
+                    if (data.length > 0) {
+                        data.forEach(kost => {
+                            resultsDiv.innerHTML += `
+                                <div class="kost">
+                                    <img src="images/${kost.imagePath}" alt="${kost.name}">
+                                    <h2>${kost.name}</h2>
+                                    <p>${kost.description}</p>
+                                    <p><strong>Fasilitas:</strong> ${kost.facilities}</p>
+                                    <p><strong>Harga:</strong> Rp ${kost.price.toLocaleString()} / bulan</p>
+                                    <p><strong>Kontak:</strong> ${kost.ownerContact}</p>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        resultsDiv.innerHTML = "<p>Tidak ada hasil ditemukan.</p>";
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>
