@@ -1,0 +1,109 @@
+/* Styling umum untuk body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Form pencarian */
+#searchForm {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#searchForm input {
+    width: 60%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#searchForm button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#searchForm button:hover {
+    background-color: #45a049;
+}
+
+/* Hasil pencarian */
+#results {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.kost {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.kost:hover {
+    transform: translateY(-5px);
+}
+
+.kost img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.kost h2 {
+    font-size: 1.8em;
+    margin: 10px 0;
+}
+
+.kost p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.kost strong {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #searchForm input {
+        width: 80%;
+    }
+
+    #results {
+        flex-direction: column;
+    }
+
+    .kost {
+        width: 80%;
+    }
+}

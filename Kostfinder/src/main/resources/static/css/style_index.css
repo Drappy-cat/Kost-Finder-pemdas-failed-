@@ -1,0 +1,153 @@
+/* Styling umum untuk body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 40px 10%;
+    text-align: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 200px; /* Sesuaikan ukuran logo */
+    height: auto;
+}
+
+.welcome-text {
+    flex: 1;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.welcome-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Auth Links (Register & Login) */
+.auth-links {
+    position: absolute;
+    top: 20px;
+    right: 10%;
+}
+
+.auth-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1em;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* Search Section */
+.search-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.search-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.search-section .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.search-section .btn:hover {
+    background-color: #45a049;
+}
+
+/* Kost Section */
+.kost-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px 10%;
+}
+
+.kost-image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.kost-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.kost-description {
+    flex: 1;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.kost-description h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.kost-description p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Styling tombol */
+a.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+a.btn:hover {
+    background-color: #45a049;
+}
+
+/* Styling untuk link biasa */
+a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+}
+
+a:hover {
+    text-decoration: underline;
+}

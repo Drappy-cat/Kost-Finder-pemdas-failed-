@@ -1,0 +1,95 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles */
+header {
+    background-color: #2c3e50; /* Warna abu-abu gelap */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Section */
+main {
+    margin-top: 120px; /* Memberikan ruang untuk header tetap */
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+/* Kost Detail Container */
+.kost-detail {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Gambar Kost */
+.kost-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.kost-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Informasi Kost */
+.kost-info {
+    background-color: #ecf0f1; /* Warna latar belakang kotak */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.kost-info h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.kost-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.kost-info strong {
+    color: #2c3e50;
+}

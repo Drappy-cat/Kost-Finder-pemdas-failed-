@@ -1,0 +1,71 @@
+/* Mengatur gaya umum halaman */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333; /* Abu-abu gelap */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Mengatur gaya untuk daftar kost */
+.kost-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.kost-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kost-image {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.kost-info {
+    flex-grow: 1;
+}
+
+.kost-info h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.kost-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.kost-info a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.kost-info a:hover {
+    background-color: #0056b3;
+}
