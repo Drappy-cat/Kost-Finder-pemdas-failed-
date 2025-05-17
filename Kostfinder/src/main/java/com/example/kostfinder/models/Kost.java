@@ -1,88 +1,105 @@
-package com.example.kostfinder.models;
+package com.kostfinder.kostfinder.models;
 
 import jakarta.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "kost_new")  // Nama tabel yang digunakan dalam database SQLite
 public class Kost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;  // ID sebagai primary key dan tipe Long
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(nullable = false)
-    private String location;
+    @Column(length = 255)
+    private String description;
 
-    @Column(nullable = false)
-    private String price;
-
+    @Column(length = 255)
     private String facilities;
 
-    @OneToMany(mappedBy = "kost", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Booking> bookings = new ArrayList<>();
+    @Column(nullable = false)
+    private int price;  // Menggunakan tipe primitif 'int' jika harga tidak boleh null
 
-    // Constructor kosong
-    public Kost() {}
+    @Column(name = "owner_contact", length = 15)
+    private String ownerContact;
 
-    // Constructor dengan parameter
-    public Kost(String name, String location, String price, String facilities) {
-        this.name = name;
-        this.location = location;
-        this.price = price;
-        this.facilities = facilities;
+    // Menyimpan gambar dalam list string yang berisi path gambar
+    @ElementCollection
+    @CollectionTable(name = "kost_images", joinColumns = @JoinColumn(name = "kost_id"))
+    @Column(name = "image_path")
+    private List<String> imagePaths;
+
+    // Konstruktor default diperlukan oleh Hibernate (tanpa parameter)
+    public Kost() {
     }
 
-    // Getters
+    // Konstruktor dengan semua parameter untuk mempermudah pembuatan objek
+    public Kost(String name, String description, String facilities, int price, String ownerContact, List<String> imagePaths) {
+        this.name = name;
+        this.description = description;
+        this.facilities = facilities;
+        this.price = price;
+        this.ownerContact = ownerContact;
+        this.imagePaths = imagePaths;
+    }
+
+    // Getter dan Setter
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getLocation() {
-        return location;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPrice() {
-        return price;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getFacilities() {
         return facilities;
     }
 
-    public List<Booking> getBookings() {
-        return bookings;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
     public void setFacilities(String facilities) {
         this.facilities = facilities;
     }
 
-    public void setBookings(List<Booking> bookings) {
-        this.bookings = bookings;
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getOwnerContact() {
+        return ownerContact;
+    }
+
+    public void setOwnerContact(String ownerContact) {
+        this.ownerContact = ownerContact;
+    }
+
+    public List<String> getImagePaths() {
+        return imagePaths;
+    }
+
+    public void setImagePaths(List<String> imagePaths) {
+        this.imagePaths = imagePaths;
     }
 }
