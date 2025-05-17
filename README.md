@@ -22,7 +22,7 @@ Aplikasi berbasis Java untuk mengelola dan menampilkan data Pencarian Kost di se
 3. Buat folder `bin` (hanya sekali):
    ```bash
    mkdir bin
-   javac -d bin src/novel/*.java src/App/Main.java
+   javac -d bin src/kostfinder/*.java src/App/Main.java
    java -cp bin App.Main
 
 By : Kelompok 1
